@@ -1,0 +1,255 @@
+.tours {
+  background-color: $lightGb;
+  background-repeat: no-repeat;
+  background-position-x: 798px;
+  background-position-y: 337px;
+
+  @include breakpoint(tablet) {
+    background-position-x: 239px;
+    background-position-y: 305px;
+  }
+  @include breakpoint(phone) {
+    background-image: none;
+  }
+}
+
+.tours__container {
+  padding: 82px 0 70px 0;
+  @include breakpoint(tablet) {
+    padding: 60px 0 87px 0;
+  }
+  @include breakpoint(phone) {
+    padding: 50px 0 40px 0;
+  }
+}
+
+.tours__headline {
+  margin-bottom: 114px;
+  font-size: 32px;
+  color: $white;
+  text-align: center;
+  font-weight: $bold;
+  @include breakpoint(tablet) {
+    font-size: 26px;
+    margin-bottom: 56px;
+  }
+  @include breakpoint(phone) {
+    font-size: 23px;
+    margin-bottom: 46px;
+  }
+}
+
+.tours__card {
+  width: 681px;
+  height: 95px;
+  margin-bottom: 40px;
+  background-color: $white;
+  border-radius: 5px;
+  @include flexDirWrap(row, nowrap);
+  align-items: center;
+  cursor: pointer;
+  transition: all $dur $ease;
+  @include breakpoint(tablet) {
+    width: 586px;
+    height: 85px;
+  }
+  @include breakpoint(phone) {
+    width: 100%;
+    height: 233px;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.tours__image-wrap {
+  width: 140px;
+  @include flexCenter(row, wrap);
+  @include breakpoint(tablet) {
+    width: 100px;
+  }
+  @include breakpoint(phone) {
+    height: 83px;
+    width: auto;
+  }
+}
+
+.tours__title-wrap {
+  width: 376px;
+  @include breakpoint(tablet) {
+    width: 371px;
+  }
+  @include breakpoint(phone) {
+    height: 75px;
+    width: 100%;
+    @include flexCenter(column, wrap);
+  }
+}
+
+.tours__title {
+  color: $lightGrey;
+  font-size: 18px;
+  font-weight: $bold;
+  @include breakpoint(touch) {
+    font-size: 16px;
+  }
+}
+
+.tours__text {
+  font-size: 14px;
+  color: $lightGrey;
+  margin-top: 6px;
+  @include breakpoint(phone) {
+    font-size: 12px;
+    margin-top: 10px;
+    width: 190px;
+    line-height: 15px;
+    margin: auto;
+    text-align: center;
+  }
+}
+
+.tours__book {
+  @include flexDirWrap(column, nowrap);
+  justify-content: center;
+  align-items: center;
+  flex-grow: 2;
+  height: 100%;
+  border-left: 8px dotted $greyDots;
+  position: relative;
+  @include breakpoint(phone) {
+    flex-grow: 0;
+    height: 70px;
+    width: 100%;
+    border-left: none;
+    border-top: 4px dotted $greyDots;
+  }
+}
+
+.tours__price {
+  font-weight: $bold;
+  font-size: 25px;
+  color: $price;
+  text-align: center;
+  @include breakpoint(tablet) {
+    font-size: 18px;
+  }
+  @include breakpoint(phone) {
+    font-size: 23px;
+  }
+}
+
+.tours__btn {
+  width: 119px;
+  height: 35px;
+  background-color: $lightBlueBtn;
+  font-size: 16px;
+  color: $white;
+  font-weight: $medium;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  transition: $dur $ease;
+  &:hover {
+    background-color: $lightBlueBtnHover;
+  }
+  @include breakpoint(tablet) {
+    width: 78px;
+    height: 27px;
+    font-size: 14px;
+  }
+}
+
+.tours___card--active {
+  width: 901px;
+  height: 123px;
+  @include breakpoint(tablet) {
+    width: 681px;
+    height: 105px;
+  }
+  @include breakpoint(phone) {
+    width: 100%;
+    height: 335px;
+  }
+  .tours__image-wrap {
+    width: 180px;
+    @include breakpoint(tablet) {
+      width: 136px;
+    }
+    @include breakpoint(phone) {
+      height: 78px;
+    }
+  }
+  .tours__image {
+    transform: scale(1.2);
+  }
+  .tours__title-wrap {
+    width: 100%;
+    max-width: 482px;
+    @include breakpoint(tablet) {
+      width: 100%;
+      max-width: 387px;
+    }
+    @include breakpoint(phone) {
+      height: 110px;
+    }
+  }
+
+  .tours__title {
+    font-size: 23px;
+    @include breakpoint(tablet) {
+      font-size: 23px;
+    }
+    @include breakpoint(phone) {
+      font-size: 18px;
+    }
+  }
+
+  .tours__text {
+    font-size: 16px;
+    margin-top: 10px;
+    @include breakpoint(tablet) {
+      font-size: 14px;
+      margin-top: 8px;
+    }
+    @include breakpoint(phone) {
+      font-size: 14px;
+      width: 190px;
+      margin: auto;
+      text-align: center;
+      line-height: 20px;
+    }
+  }
+
+  .tours__book {
+    gap: 19px;
+    border-width: 10px;
+    @include breakpoint(tablet) {
+      gap: 12px;
+    }
+    @include breakpoint(phone) {
+      height: 140px;
+    }
+  }
+
+  .tours__price {
+    font-size: 30px;
+    @include breakpoint(tablet) {
+      font-size: 23px;
+    }
+  }
+
+  .tours__btn {
+    opacity: 1;
+    visibility: visible;
+    position: initial;
+    bottom: 0;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+  }
+}

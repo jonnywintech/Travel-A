@@ -1,0 +1,177 @@
+.slider {
+  .wrap {
+    position: initial;
+  }
+}
+
+.slider__container {
+  @include flexDirWrap(row, nowrap);
+  justify-content: space-between;
+  align-items: center;
+  padding: 120px 20px 119px 0;
+  @include breakpoint(tablet) {
+    paddin: 79px 0 87px;
+  }
+  @include breakpoint(phone) {
+    padding: 96px 0 64px;
+    flex-direction: column;
+  }
+  &::after {
+    content: "";
+    width: 910px;
+    height: 20px;
+    @include breakpoint(touch) {
+      width: 0;
+      height: 0;
+    }
+  }
+}
+
+.slider__static {
+  width: 50%;
+  @include breakpoint(phone) {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.slider__headline {
+  padding: 101px 0 42px;
+  font-size: 28px;
+  position: relative;
+  font-weight: $bold;
+  line-height: 35px;
+  color: $darkGb;
+  max-width: 481px;
+  width: 100%;
+  z-index: 3;
+  &::after {
+    content: "Explore";
+    color: #f2f2f2;
+    font-size: 75px;
+    line-height: 22px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 70px;
+    left: 0;
+    z-index: -1;
+  }
+  @include breakpoint(touch) {
+    padding: 98px 0 37px;
+    font-size: 23px;
+    &::after {
+      font-size: 65px;
+      line-height: 22px;
+      margin: auto;
+      bottom: 0;
+    }
+  }
+  @include breakpoint(phone) {
+    padding: 0 0 26px;
+    &::after {
+      right: 0;
+      bottom: 50px;
+    }
+  }
+}
+
+.slider__text {
+  padding-bottom: 42px;
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+  max-width: 481px;
+  @include breakpoint(touch) {
+    padding-bottom: 45px;
+    font-size: 14px;
+  }
+  @include breakpoint(phone) {
+    padding-bottom: 29px;
+    max-width: none;
+  }
+}
+
+.slider__btn {
+  @include breakpoint(phone) {
+    display: none;
+  }
+}
+
+.slider__dynamic {
+  max-width: 810px;
+  width: 50%;
+  position: absolute;
+  right: 0;
+
+  @include breakpoint(touch) {
+    max-width: 350px;
+    padding: 0 47px 0 0;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    margin: auto;
+    margin-right: 0;
+    align-items: flex-end;
+  }
+  @include breakpoint(phone) {
+    margin: 0;
+    padding-right: 140px;
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  @include breakpoint(touch) {
+    position: absolute;
+    width: 300%;
+    left: 0;
+  }
+}
+.swiper-button-next::after {
+  color: $white;
+}
+.swiper-button-prev::after {
+  color: $white;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  position: relative;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  @include breakpoint(touch) {
+    max-height: 425px;
+  }
+}
+
+.slider__city {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: $white;
+  font-size: 14px;
+  line-height: 27px;
+  font-weight: $bold;
+  padding: 0 0 17px 23px;
+}

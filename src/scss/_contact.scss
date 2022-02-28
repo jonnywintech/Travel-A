@@ -1,0 +1,169 @@
+.contact {
+  background-color: $whiteish;
+}
+.contact__container {
+  padding: 71px 0 102px 0;
+  @include breakpoint(tablet) {
+    padding: 65px 109px 114px 109px;
+  }
+  @include breakpoint(phone) {
+    padding: 57px 0 55px 0;
+  }
+}
+
+.contact__headline {
+  margin-bottom: 80px;
+  font-weight: $bold;
+  font-size: 32px;
+  line-height: 24px;
+  color: $almostBlack;
+  text-align: center;
+  width: 100%;
+  @include breakpoint(tablet) {
+    margin-bottom: 60px;
+    font-size: 28px;
+  }
+  @include breakpoint(phone) {
+    margin-bottom: 41px;
+    font-size: 23px;
+  }
+}
+
+.contact__header {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 30px;
+}
+
+.contact__image {
+  width: 50%;
+  height: 450px;
+  background-size: 100% auto;
+  @include breakpoint(touch) {
+    display: none;
+  }
+}
+
+.contact__form-wrap {
+  width: 50%;
+  height: 100%;
+}
+
+.contact__form {
+  display: block;
+  width: 100%;
+  // max-width: 500px;
+  @include breakpoint(touch) {
+    width: 100%;
+  }
+}
+
+.contact__label {
+  padding-bottom: 14px;
+  font-size: 14px;
+  font-weight: $bold;
+  line-height: 24px;
+  color: $darkGrey;
+  display: block;
+  @include breakpoint(touch) {
+    font-size: 12px;
+  }
+}
+
+.contact__input {
+  margin-bottom: 25px;
+  padding-left: 20px;
+  border: 1px solid $formGrey;
+  border-radius: 5px;
+  max-width: 498px;
+  width: 100%;
+  height: 58px;
+  display: block;
+  background-color: $whiteish;
+  // background-color:$whiteish;
+  &[placeholder] {
+    font-size: 16px;
+    line-height: 24px;
+    color: $formGrey;
+  }
+  @include breakpoint(tablet) {
+    max-width: 498px;
+    height: 58px;
+  }
+  @include breakpoint(phone) {
+    padding-left: 15px;
+    margin-bottom: 19px;
+  }
+}
+
+.contact__input--message {
+  max-width: 498px;
+  width: 100%;
+  height: 140px;
+  padding-left: 20px;
+  margin-bottom: 21px;
+  padding-top: 22px;
+  @include breakpoint(phone) {
+    height: 102px;
+  }
+  &:placeholder {
+    margin: auto;
+  }
+}
+
+.contact__label--terms {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 14px;
+  line-height: 24px;
+  color: $darkGrey;
+  width: 100%;
+  font-weight: $regular;
+  @include breakpoint(phone) {
+    margin-right: 35px;
+  }
+}
+
+.contact__check {
+  display: none;
+}
+
+.contact__box {
+  width: 19px;
+  height: 19px;
+  border: 1px solid $formGrey;
+  border-radius: 5px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact__box::after {
+  content: "\2713";
+  color: $whiteish;
+  font-weight: $bold;
+  font-size: 18px;
+}
+
+.contact__check:checked + .contact__box::after {
+  color: $orange;
+  transition: $dur $ease;
+}
+
+.contact__link {
+  font-weight: $bold;
+  color: $orange;
+  text-decoration: none;
+  transition: $dur $ease;
+  &:hover {
+    color: $orangeBtnHover;
+  }
+}
+
+.contact__btn {
+  display: block;
+}

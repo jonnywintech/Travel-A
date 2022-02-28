@@ -1,0 +1,97 @@
+.about__container {
+  padding: 114px 0 127px 0;
+  @include breakpoint(tablet) {
+    padding: 71px 0 76px 0;
+  }
+  @include breakpoint(phone) {
+    padding: 41px 0 76px 0;
+  }
+}
+
+.about__heading {
+  font-size: 23px;
+  line-height: 24px;
+  font-weight: $medium;
+  margin-bottom: 47px;
+  color: $aboutPara;
+  @include breakpoint(tablet) {
+    margin-bottom: 32px;
+  }
+  @include breakpoint(phone) {
+    margin-bottom: 28px;
+  }
+}
+
+.about__text {
+  font-size: 16px;
+  line-height: 26px;
+  color: $aboutPara;
+  max-width: 981px;
+  width: 100%;
+  @include breakpoint(touch) {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  @include breakpoint(phone) {
+    line-height: 23px;
+  }
+}
+
+.about__link {
+  text-decoration: none;
+  color: $orangeBtn;
+  transition: $dur $ease;
+  &:hover {
+    color: $orangeBtnHover;
+  }
+}
+
+.about__list {
+  margin: 39px 0 50px 0;
+  @include breakpoint(touch) {
+    margin: 37px 0 49px 0;
+  }
+  @include breakpoint(phone) {
+    margin: 55px 0 62px 0;
+  }
+}
+
+.about__item {
+  font-size: 16px;
+  line-height: 26px;
+  color: $aboutPara;
+  max-width: 981px;
+  width: 100%;
+  list-style: none;
+  @include breakpoint(touch) {
+    font-size: 14px;
+    line-height: 26px;
+  }
+}
+.about__item::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  background-color: black;
+  border-radius: 50%;
+  display: inline-block;
+  margin: auto;
+  margin-right: 10px;
+  position: relative;
+  bottom: 1px;
+}
+
+.about__subheading {
+  font-size: 23px;
+  line-height: 24px;
+  color: $aboutPara;
+  font-weight: $medium;
+  margin-bottom: 46px;
+  @include breakpoint(touch) {
+    margin-bottom: 38px;
+    font-size: 18px;
+  }
+  @include breakpoint(phone) {
+    margin-bottom: 29px;
+  }
+}

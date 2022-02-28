@@ -1,0 +1,128 @@
+@mixin breakpoint($value) {
+  @if $value == "phone" {
+    @media only screen and (min-width: 120px) and (max-width: 767px) {
+      @content;
+    }
+  } @else if $value == "tablet" {
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+      @content;
+    }
+  } @else if $value == "touch" {
+    @media only screen and (min-width: 120px) and (max-width: 1024px) {
+      @content;
+    }
+  } @else if $value == "desktop" {
+    @media only screen and (min-width: 1025px) {
+      @content;
+    }
+  } @else {
+    @media only screen and (max-width: $value) {
+      @content;
+    }
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+////// colors brand //////
+$orange: #f05a2b;
+$yellow: #f7b74f;
+$price: #f5c41f;
+$lightBlue: #87c5ec;
+$darkGb: #2f797a;
+$mediumGb: #318c8c;
+$lightGb: #7cc9c2;
+$almostBlack: #2e2d2c;
+$darkGrey: #3c3c3b;
+$lightGrey: #575756;
+$whiteish: #f7f7f7;
+$white: #ffffff;
+$greyArrow: #a7a7a7;
+$greyBaloon: #f3f5f9;
+$greyDots: #d9d9d9;
+$aboutPara: #1d1d1d;
+$formGrey: #878787;
+
+/////// buttons colors //////
+$orangeBtn: #f05a28;
+$orangeBtnHover: #c54b1a;
+
+$lightBlueBtn: #87c5ec;
+$lightBlueBtnHover: #4a7abc;
+
+///// transition //////
+$dur: 0.3s;
+$halfs: 0.5s;
+$ease: ease;
+
+/////// fontweight //////
+
+$light: 300;
+$regular: 400;
+$medium: 500;
+$bold: 700;
+
+/////// container desktop //////
+
+.wrap {
+  max-width: 1220px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  @include breakpoint(tablet) {
+    padding: 0 24px;
+  }
+  @include breakpoint(phone) {
+    padding: 0 20px;
+  }
+}
+
+//// screen reader only///
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  top: auto;
+  overflow: hidden;
+}
+
+@mixin flexDirWrap($direction, $wrap) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+}
+
+@mixin flexCenter($direct, $wrapme) {
+  display: flex;
+  flex-direction: $direct;
+  flex-wrap: $wrapme;
+  align-content: center;
+  justify-content: center;
+}
+/////// buttons ///////
+
+button {
+  border: none;
+  background: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.has-cover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}

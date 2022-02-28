@@ -1,0 +1,253 @@
+.accordion {
+  @include breakpoint(phone) {
+    .wrap {
+      padding: 0;
+    }
+  }
+}
+
+.accordion__container {
+  @include flexDirWrap(column, wrap);
+  padding-top: 87px;
+  position: relative;
+  @include breakpoint(tablet) {
+    padding-top: 62px;
+  }
+  @include breakpoint(phone) {
+    padding-top: 58px;
+  }
+}
+
+.accordion__heading {
+  width: 100%;
+  height: 100%;
+  @include flexDirWrap(row, nowrap);
+  @include breakpoint(touch) {
+    flex-direction: column;
+  }
+}
+
+.accordion__title {
+  font-weight: $bold;
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 96px;
+  @include breakpoint(touch) {
+    margin-bottom: 50px;
+    font-size: 28px;
+  }
+  @include breakpoint(phone) {
+    font-size: 23px;
+    margin-bottom: 52px;
+  }
+}
+
+.accordion__box {
+  margin-top: 61px;
+  padding: 25px 0 32px 35px;
+  margin-bottom: 64px;
+  height: 100%;
+  display: inline-block;
+  flex: 1 1 45%;
+  background-color: $yellow;
+
+  @include breakpoint(touch) {
+    text-align: center;
+    padding: 27px 24px 46px 24px;
+    margin: 0 37px;
+    max-height: 1118px;
+  }
+  @include breakpoint(phone) {
+    padding: 38px 20px 44px 20px;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.accordion__headline {
+  padding-top: 17px;
+  padding-bottom: 82px;
+  font-size: 28px;
+  font-weight: $bold;
+  color: $white;
+  @include breakpoint(touch) {
+    padding-bottom: 52px;
+    font-size: 20px;
+    padding-top: 0;
+  }
+  @include breakpoint(phone) {
+    padding-bottom: 42px;
+    font-size: 18px;
+  }
+}
+
+.accordion__subheadline {
+  padding-bottom: 32px;
+  font-weight: $bold;
+  font-size: 16px;
+  color: $white;
+  @include breakpoint(touch) {
+    padding-bottom: 32px;
+    font-size: 14px;
+  }
+}
+
+.accordion__text-p {
+  width: 100%;
+  max-width: 446px;
+  padding-bottom: 40px;
+  color: $white;
+  opacity: 0.7;
+  line-height: 22px;
+  @include breakpoint(touch) {
+    width: 100%;
+    padding-bottom: 45px;
+    margin: auto;
+    max-width: fit-content;
+  }
+  @include breakpoint(phone) {
+    font-size: 12px;
+    padding-bottom: 30px;
+    margin-bottom: 0;
+  }
+}
+
+.accordion__slides {
+  display: inline-block;
+  position: relative;
+  flex: 1 1 50%;
+  max-width: 580px;
+  padding: 37px 20px 26px;
+  background-color: $whiteish;
+  z-index: 2;
+  border-radius: 10px;
+
+  @include breakpoint(touch) {
+    margin: auto;
+    width: 100%;
+    padding: 37px 90px;
+    max-width: none;
+  }
+  @include breakpoint(phone) {
+    position: relative;
+    top: 0;
+    border-radius: 0;
+    padding: 34px 20px 20px;
+  }
+}
+
+.accordion__places {
+  font-size: 23px;
+  font-weight: $bold;
+  color: $almostBlack;
+  text-align: center;
+  margin: auto;
+  padding-bottom: 24px;
+  @include breakpoint(touch) {
+    padding-bottom: 24px;
+  }
+  @include breakpoint(phone) {
+    padding-bottom: 34px;
+  }
+}
+.accordion__country {
+  margin-bottom: 20px;
+}
+
+.accordion__button {
+  width: 100%;
+  height: 78px;
+  border-radius: 10px;
+  color: $white;
+  font-size: 18px;
+  font-weight: $bold;
+  text-transform: uppercase;
+  text-align: right;
+  padding-right: 48px;
+  z-index: 3;
+  transition: max-height 0.2s ease-out;
+  filter: drop-shadow(0 1px 2px $almostBlack);
+  margin-bottom: 10px;
+  @include breakpoint(touch) {
+    height: 78px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @include breakpoint(phone) {
+    height: 56px;
+  }
+}
+
+.accordion__icon {
+  position: relative;
+  font-size: 12px;
+  bottom: 2px;
+  left: 20px;
+  font-weight: $bold;
+  &::before {
+    transition: transform $dur $ease;
+  }
+}
+
+.accordion__wrapper {
+  background-color: $white;
+  margin: auto;
+  width: 98%;
+  visibility: hidden;
+  opacity: 0;
+  max-height: 0;
+  transition: all $dur $ease;
+}
+
+.accordion__button--active {
+  .accordion__icon::before {
+    transform: rotate(180deg);
+  }
+}
+
+.accordion__city {
+  display: block;
+  font-weight: $bold;
+  font-size: 18px;
+  text-align: center;
+  padding: 46px 0 15px 0;
+  color: $almostBlack;
+  opacity: 0.7;
+}
+
+.accordion__line {
+  background-color: #4a79bc;
+  width: 46px;
+  height: 2px;
+}
+
+.accordion__text {
+  margin: auto;
+  max-height: 515px;
+  padding: 49px 20px 30px 20px;
+  text-align: center;
+  color: $almostBlack;
+}
+
+.expand {
+  opacity: 1;
+  visibility: visible;
+  filter: none;
+  max-height: 500px;
+  transition: max-height $dur $ease;
+}
+
+.accordion__empty {
+  display: inline-block;
+  flex: 1 1 5%;
+  background-color: $yellow;
+  padding-top: 541px;
+  height: 100%;
+  margin: 61px 0 64px;
+  @include breakpoint(touch) {
+    padding: 57px 0 0;
+    margin: 0;
+  }
+}

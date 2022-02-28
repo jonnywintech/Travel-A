@@ -1,0 +1,343 @@
+.header__container {
+  @include flexDirWrap(row, nowrap);
+  justify-content: flex-start;
+  align-items: center;
+  background-color: $white;
+  height: 81px;
+  width: 100%;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 20px;
+  right: 20px;
+  top: 0;
+  z-index: 10;
+  margin: auto;
+  @include breakpoint(touch) {
+    left: 0;
+    margin: 0;
+    flex-direction: column;
+    font-size: 22px;
+    text-align: center;
+    transition: $halfs $ease;
+  }
+}
+
+.header__container--active {
+  @include breakpoint(touch) {
+    height: 100vh;
+  }
+}
+
+.header__logo {
+  margin: 0 33px 0 34px;
+  @include breakpoint(touch) {
+    position: absolute;
+    left: 0;
+    top: 32px;
+  }
+  @include breakpoint(phone) {
+    margin-left: 20px;
+  }
+}
+
+.header__nav {
+  position: relative;
+  flex-grow: 10;
+  @include breakpoint(touch) {
+    flex-grow: 0;
+    width: 100%;
+  }
+}
+
+.header__nav--active {
+  @include breakpoint(touch) {
+    position: initial;
+    margin-top: 79px;
+    background-color: $greyBaloon;
+    width: 100vw;
+    transition: 1s $ease;
+  }
+}
+
+.header__list {
+  transition: $dur $ease;
+}
+
+.header__item {
+  display: inline-block;
+  margin: auto;
+  width: 72px;
+  height: 81px;
+  text-align: center;
+  transition: $dur $ease;
+  &:hover,
+  &:active {
+    cursor: pointer;
+    border-bottom: 3px solid $orange;
+    @include breakpoint(touch) {
+      border-bottom: none;
+    }
+  }
+  &:active {
+    background-color: #f3f5f9;
+  }
+  @include breakpoint(touch) {
+    display: block;
+    width: auto;
+    height: auto;
+  }
+}
+
+.header__link {
+  line-height: 81px;
+  text-decoration: none;
+  padding: 30px 0;
+  color: $almostBlack;
+  font-weight: bold;
+  @include breakpoint(touch) {
+    padding: 20px 0;
+    &:hover,
+    &:active {
+      color: $orange;
+    }
+  }
+}
+
+.header__functions {
+  @include flexDirWrap(row, nowrap);
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  transition: all $halfs $ease;
+}
+
+.header__functions--active {
+  @include breakpoint(touch) {
+    flex-direction: column;
+    position: initial;
+    background-color: $greyBaloon;
+    flex-grow: 10;
+    justify-content: flex-start;
+    width: 100vw;
+  }
+}
+
+.header__form {
+  @include breakpoint(touch) {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    max-width: 533px;
+  }
+  @include breakpoint(phone) {
+    right: 65px;
+    left: auto;
+    width: 76%;
+  }
+}
+
+.header__searchbar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto 0;
+  height: 44px;
+  border: none;
+  width: 100%;
+  transition: $dur $ease;
+  background-color: lightgray;
+  padding-left: 15px;
+  transition: $halfs $ease;
+  &::placeholder {
+    padding-left: 45px;
+  }
+  @include breakpoint(touch) {
+    top: 19px;
+  }
+}
+
+.header__btn-search {
+  color: $lightGrey;
+  position: absolute;
+  right: 17px;
+  top: 0;
+  bottom: 0;
+  @include breakpoint(phone) {
+    right: 13px;
+  }
+}
+
+.header__btn-close {
+  color: $lightGrey;
+  position: absolute;
+  right: 17px;
+  top: 0;
+  bottom: 0;
+  @include breakpoint(phone) {
+    right: 13px;
+  }
+}
+
+.header__btn-search--active {
+  left: 17px;
+}
+
+.header__btn-lang {
+  color: $orange;
+  font-weight: $bold;
+  margin-right: 35px;
+  &::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid $greyArrow;
+    position: absolute;
+    top: 37px;
+    right: 27px;
+  }
+  &:hover {
+    color: $orangeBtnHover;
+  }
+  @include breakpoint(touch) {
+    display: none;
+  }
+}
+
+.hide {
+  visibility: hidden;
+  opacity: 0;
+  transition: $halfs $ease;
+}
+
+.header__lang-menu {
+  position: absolute;
+  width: 113px;
+  height: 70px;
+  background-color: white;
+  @include flexDirWrap(column, nowrap);
+  justify-content: center;
+  align-items: flex-start;
+  border: 1px solid $greyBaloon;
+  right: 5px;
+  top: 61px;
+  border-radius: 10px;
+  transition: $halfs $ease;
+  padding-left: 15px;
+  @include breakpoint(touch) {
+    display: none;
+  }
+}
+
+.header__lang-btn {
+  font-weight: $bold;
+  margin: 3px;
+}
+
+.header__baloon {
+  background: white;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: -5px;
+  right: 17px;
+  border-top: 1px solid $greyBaloon;
+  border-left: 1px solid $greyBaloon;
+  transform: rotate(45deg);
+}
+
+.header__burger {
+  display: none;
+  @include breakpoint(touch) {
+    display: block;
+    text-align: end;
+    position: absolute;
+    top: 25px;
+    right: 30px;
+  }
+  @include breakpoint(phone) {
+    right: 20px;
+  }
+}
+
+.header__custom-select {
+  display: none;
+  @include breakpoint(touch) {
+    display: block;
+    position: relative;
+  }
+}
+
+.header__language {
+  @include breakpoint(touch) {
+    background-color: none;
+    border: 1px solid $greyArrow;
+    border-radius: 5px;
+    height: 60px;
+    width: 161px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: $bold;
+    appearance: none;
+    padding-right: 14px;
+  }
+}
+
+.header__custom-arrow {
+  position: absolute;
+  right: 12px;
+  top: 40%;
+  margin: auto;
+  pointer-events: none;
+}
+
+.icon-arrow-down {
+  font-size: 12px;
+}
+
+.header__line {
+  width: 34px;
+  height: 2px;
+  background-color: $orange;
+  margin: 6px 0;
+  display: block;
+  transition: all 0.3s $ease;
+}
+
+.header__line--bottom {
+  width: 23px;
+  margin: 6px 0 6px auto;
+}
+
+.header__burger--actve {
+  .header__line--main {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .header__line--top {
+    transform: rotate(-45deg) translate(-4px, 6px);
+  }
+  .header__line--bottom {
+    width: 34px;
+    transform: rotate(45deg) translate(-5px, -7px);
+  }
+}
+
+.btn {
+  width: 145px;
+  height: 49px;
+  background-color: $orange;
+  color: $white;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: $dur $ease;
+  &:hover {
+    background-color: $orangeBtnHover;
+  }
+}

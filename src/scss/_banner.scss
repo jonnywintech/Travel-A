@@ -1,0 +1,242 @@
+.banner {
+  height: 100vh;
+  @include breakpoint(phone) {
+    height: fit-content;
+  }
+}
+
+.banner__container {
+  @include flexDirWrap(row, nowrap);
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  @include breakpoint(touch) {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.banner__top {
+  align-self: center;
+  padding: 78px 0;
+  @include breakpoint(touch) {
+    padding: 179px 0 100px 0;
+    align-self: flex-start;
+    justify-self: start;
+  }
+  @include breakpoint(phone) {
+    padding-bottom: 0;
+  }
+}
+
+.banner__headline {
+  font-size: 80px;
+  font-weight: $bold;
+  color: $white;
+  margin-bottom: 54px;
+  @include breakpoint(tablet) {
+    font-size: 55px;
+  }
+  @include breakpoint(phone) {
+    font-size: 45px;
+  }
+}
+
+.banner__text {
+  margin-bottom: 58px;
+  width: 100%;
+  max-width: 428px;
+  color: $white;
+  font-size: 16px;
+  line-height: 27px;
+  @include breakpoint(tablet) {
+    font-size: 16px;
+  }
+}
+
+.btn-transparent {
+  background: none;
+  border: 2px solid $white;
+  width: 168px;
+  margin-left: 21px;
+  &::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 12px 8px 0;
+    border-color: transparent $white transparent transparent;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+    transform: rotate(180deg) translateY(1px);
+  }
+  &:hover {
+    background-color: $white;
+    color: $orange;
+    &::before {
+      border-color: transparent $orange transparent transparent;
+    }
+  }
+  @include breakpoint(phone) {
+    margin-left: 15px;
+    margin-top: 20px;
+  }
+  @media only screen and (min-width: 120px) and (max-width: 372px) {
+    display: block;
+    margin-left: 0;
+  }
+}
+// work in progress
+.banner__player {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  animation: open 1s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes open {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.banner__video {
+  margin: 15% auto;
+  width: 764px;
+  height: 429px;
+  position: relative;
+  padding-top: 40px;
+  @include breakpoint(tablet) {
+    margin: 40% auto;
+    width: 520px;
+    height: 292px;
+  }
+  @include breakpoint(phone) {
+    margin-top: 70%;
+    width: 100%;
+    height: 100%;
+    max-width: 318px;
+    max-height: 179px;
+  }
+}
+
+.banner__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: $white;
+  font-weight: $bold;
+  font-size: 20px;
+  transition: $ease $dur;
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+.banner__iframe {
+  width: 100%;
+  height: 100%;
+}
+
+// work in progress
+
+.banner__bottom {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  align-self: flex-end;
+  padding: 30px 0 10% 0;
+  @include flexDirWrap(column, nowrap);
+  @include breakpoint(touch) {
+    align-self: flex-end;
+  }
+  @include breakpoint(tablet) {
+    padding-bottom: 50px;
+  }
+  @include breakpoint(phone) {
+    align-items: flex-end;
+    padding-bottom: 40px;
+  }
+}
+
+.banner__quote-img {
+  position: absolute;
+  top: 0;
+  left: -50px;
+  @include breakpoint(phone) {
+    left: 100px;
+    top: 100px;
+  }
+}
+
+.banner__subline {
+  font-size: 16px;
+  font-weight: $bold;
+  margin-bottom: 20px;
+  z-index: 2;
+  @include breakpoint(phone) {
+    margin-top: 116px;
+  }
+}
+
+.banner__text-bottom {
+  font-size: 12px;
+  width: 266px;
+  font-weight: $regular;
+  color: $almostBlack;
+  z-index: 2;
+  @include breakpoint(phone) {
+    text-align: right;
+  }
+}
+
+.banner__guide-name {
+  font-size: 12;
+  font-weight: $bold;
+  position: absolute;
+  right: -15px;
+  top: 80px;
+  transform: rotate(-90deg);
+  color: $almostBlack;
+  &::after {
+    content: "Serbia";
+    display: block;
+    font-weight: $regular;
+  }
+  @include breakpoint(tablet) {
+    top: 80px;
+  }
+  @include breakpoint(phone) {
+    text-align: right;
+    transform: rotate(0deg);
+    position: relative;
+    top: 20px;
+    right: 60px;
+  }
+}
+
+.banner__guide-img {
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  @include breakpoint(tablet) {
+    top: 0;
+  }
+  @include breakpoint(phone) {
+    position: relative;
+    top: -15px;
+    left: 35px;
+  }
+}
